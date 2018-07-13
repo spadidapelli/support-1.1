@@ -1,0 +1,78 @@
+<header analytics-track="" class="header header-7 header-bar">
+    <div class="branding">
+        <a class="nav-link qa-vm-cloud-label" href="/">
+            <clr-icon shape="vm-bug"></clr-icon>
+            <span class="title">My VMware</span>
+        </a>
+    </div>
+
+    <div class="header-nav -topics">
+        <clr-dropdown [clrCloseMenuOnItemClick]="false">
+            <button type="button" clrDropdownTrigger>
+                <label class="dropdown-header">Products</label>
+                <clr-icon shape="caret down" size="12"></clr-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen>
+                <label class="dropdown-header">Manage My Products</label>
+                <button type="button" clrDropdownItem>My Products</button>
+                <button type="button" clrDropdownItem>License Keys</button>
+                <div class="dropdown-divider"></div>
+                <label class="dropdown-header">Manage My Services</label>
+                <button type="button" clrDropdownItem>Subscription Services</button>
+                <button type="button" clrDropdownItem>Add-on/Upgrade Requests</button>
+            </clr-dropdown-menu>
+        </clr-dropdown>
+        <clr-dropdown [clrCloseMenuOnItemClick]="false">
+            <button type="button" clrDropdownTrigger>
+                <label class="dropdown-header">Accounts</label>
+                <clr-icon shape="caret down" size="12"></clr-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen>
+                <label class="dropdown-header">Manage Accounts</label>
+                <button type="button" clrDropdownItem>Account Summary</button>
+                <button type="button" clrDropdownItem>Users & Permissions</button>
+                <div class="dropdown-divider"></div>
+                <label class="dropdown-header">View Purchases</label>
+                <button type="button" clrDropdownItem>Order History</button>
+                <button type="button" clrDropdownItem>Subscription Billing Statements</button>
+                <div class="dropdown-divider"></div>
+                <label class="dropdown-header">Manage Funds</label>
+                <button type="button" clrDropdownItem>Enterprise Purchasing Program (EPP)</button>
+                <button type="button" clrDropdownItem>Hybrid & Subscription Purchasing Programs (HPP/SPP)</button>
+            </clr-dropdown-menu>
+        </clr-dropdown>
+        <clr-dropdown [clrCloseMenuOnItemClick]="false">
+            <button type="button" clrDropdownTrigger>
+                <label class="dropdown-header">Support</label>
+                <clr-icon shape="caret down" size="12"></clr-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen>
+                <label class="dropdown-header">Support</label>
+                <button type="button" clrDropdownItem>Get Support</button>
+                <button type="button" clrDropdownItem>Support Request History</button>
+                <div class="dropdown-divider"></div>
+                <label class="dropdown-header">Resources & Education</label>
+                <button type="button" clrDropdownItem>Support Center</button>
+                <button type="button" clrDropdownItem>Training</button>
+            </clr-dropdown-menu>
+        </clr-dropdown>
+    </div>
+
+    <div class="header-actions sign" style="align-items:center">
+        <!---->
+        <a class="nav-link nav-text qa-header-link" target="_blank" rel="noopener" href="https://www.vmware.com/">VMware.com</a>
+        <a class="nav-link nav-text qa-header-link" target="_blank" rel="noopener" href="https://www.vmware.com/vmwarestore/">Store</a>
+        <a class="nav-link nav-text qa-header-link" target="_blank" rel="noopener" href="https://innercircle.vmware.com/portal/sslog.aspx">Inner Circle</a>
+        <a class="nav-link nav-text qa-header-link" target="_blank" rel="noopener" href="https://communities.vmware.com/welcome">Communities</a>
+        <clr-dropdown class="Products dropdown">
+            <button class="mf-heatmap-click nav-link dropdown-toggle" clrdropdowntrigger="" style="width: 73px; margin-top: 5px; margin-right: 24px; padding: 0; outline: 0 !important;">
+                <clr-icon shape="world" size="25" style="width: 25px; height: 25px;">
+                </clr-icon>
+            </button>
+            <!---->
+        </clr-dropdown>
+        <a class="vmware-logo qa-vm-label" rel="noopener" target="_blank" href="http://www.vmware.com/"></a>
+    </div>
+    <!---->
+</header>
+<!---->

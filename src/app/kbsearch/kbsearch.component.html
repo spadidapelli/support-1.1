@@ -1,0 +1,34 @@
+<div class="clr-row row text-center">
+  <div class="clr-col-sm-12 clr-col-md-12 col-md-12">
+    <h4 class="supportLabel">How can we help you today?</h4>
+  </div>
+</div>
+<div class="clr-row row text-center search mt-1">
+  <div class="clr-col-sm-12 clr-col-md-12 col-md-12">
+    <input type="text" id="site-search" name="q" size="50" placeholder="Start by typing your issue, SR number or product…. "
+      aria-label="Start by typing your issue, SR number or product…. " (keyup)="onKey($event)" />
+  </div>
+</div>
+<div class="row mt-1" *ngIf="spinner">
+<span class="spinner spinner-sm mx-auto">
+    Loading...
+</span>
+</div>
+<div class="clr-row row search mt-1" *ngIf="showKbList">
+  <div class="col-md-8 mx-auto">
+    <h4 id="link1">Top KB article</h4>
+    <div id="content1" class="mt-1">
+      <div class="row mb-1" *ngFor="let item of kbList.results; let i = index">
+        <div class="col-md-12">
+          <div> <a href="{{item.url}}" class="kbURL" innerHTML="{{item.title}}"></a> </div>
+          <div innerHTML="{{item.text}}"></div>
+        </div>
+      </div>
+      <div class="createSupportRequest mt-1">
+        <div class="text-center">Cannot find what you are looking for?</div>
+        <div class="text-center">
+          <button class="btn btn-primary">Ask the community</button><button class="btn btn-primary" [routerLink]="['/createsupportrequest']">Create support request</button></div>
+      </div>
+    </div>
+  </div>
+</div>

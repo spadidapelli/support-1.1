@@ -1,0 +1,20 @@
+{
+    "results": [
+        {
+            "url": "https://docs.vmware.com/en/VMware-Cost-Insight/services/Using-VMware-Cost-Insight/GUID-6579404C-90A0-421C-B477-C095D0CCB69A.html",
+            "title": "Working with AWS Accounts in <b>VMware Cloud</b> Services",
+            "text": "When you add your AWS public cloud account to VMware Cloud services, you establish a connection that."
+        },
+        {
+            "url": "https://docs.vmware.com/en/VMware-Cost-Insight/services/Using-VMware-Cost-Insight/GUID-15341701-76DE-42EF-9CBE-778550D77722.html",
+            "title": "Working with Azure Accounts in <b>VMware Cloud</b> Services",
+            "text": "When you add your AWS public cloud account to VMware Cloud services, you establish a connection that allows information about your AWS ."
+        },
+        {
+            "url": "https://docs.vmware.com/en/VMware-Cost-Insight/services/Using-VMware-Cost-Insight/GUID-618389EA-5A52-477D-AB4D-83CB1D5E36F8.html",
+            "title": "Working with vCenter Accounts in <b>VMware Cloud</b> Services",
+            "text": "When you add your AWS public cloud account to VMware Cloud services, you establish a connection that allows information about your AWS resources and billing to be shared."
+        }
+    ],
+    "totalResults": 3
+}
