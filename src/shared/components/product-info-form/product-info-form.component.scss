@@ -1,0 +1,42 @@
+.support-request-form {
+  background-color: #ffffff;
+
+  .clr-form {
+      margin-top: 0.8rem;
+      .emc-container {
+          align-items: center;
+          .dropdown {
+              .btn {
+                  border: 1px solid #dfdfdf;
+                  color: #000000;
+                  border-radius: 1rem;
+              }
+              .dropdown-menu {
+                width: 95%;
+              }
+          }
+      }
+      .product-type {
+          .form-group {
+              flex-wrap: nowrap;
+              padding-left: 5.5rem;
+              display: inline-flex;
+              .radio {
+                  flex: auto;
+              }
+          }
+      }
+      .product-options {
+          .clr-control-container {
+              width: 100%;
+              .clr-textarea {
+                  width: 100%;
+                  height: 100px;
+              }
+          }
+          .submit-btn {
+            border-radius: 1rem;
+          }
+      }
+  }
+}

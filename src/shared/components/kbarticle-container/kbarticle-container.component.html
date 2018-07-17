@@ -1,0 +1,33 @@
+<!-- <div class="text-left kb-articles-container">
+    <div class="card mt-0">
+      <div class="card-header">
+        {{productInfo.KBArticleTitle}}
+      </div>
+      <div class="card-block">
+        <div class="card-text">
+            <button class="btn btn-info-outline px-1">{{productInfo.btnLabel}}</button>
+        </div>
+        <div class="card-text" *ngFor="let article of productInfo.KBArticles">
+            <a [href]="article.url">{{article.linkText}}</a>
+            <p class="article-desc mt-0">{{article.desc}}</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+      <div class="col-md-11 mx-auto">
+        <h4 id="link1">{{kbList.headingText}}</h4>
+        <div id="content1" class="mt-1">
+          <div class="row mb-1" *ngFor="let item of kbList.results; let i = index">
+            <div class="col-md-12">
+              <div> <a href="{{item.url}}" class="kbURL" innerHTML="{{item.title}}"></a> </div>
+              <div innerHTML="{{item.text}}"></div>
+            </div>
+          </div>
+          <div class="createSupportRequest mt-1">
+            <div class="text-center">Cannot find what you are looking for?</div>
+            <div class="text-center">
+              <button class="btn btn-primary">Ask the community</button><button class="btn btn-primary" [routerLink]="['/createsupportrequest']">Create support request</button></div>
+          </div>
+        </div>
+      </div>
