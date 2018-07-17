@@ -1,3 +1,4 @@
-<p>
-  createsupportrequest works!
-</p>
+<div class="clr-row row text-center support-enquiry-container mt-2">
+  <app-product-info-form *ngIf="(productInfo$ | async) as productInfo" [productInfo]="productInfo"></app-product-info-form>
+  <app-kbarticle-container *ngIf="showKbList" [kbList]="kbList" [wrapperClass]="'col-md-6'"></app-kbarticle-container>
+</div>

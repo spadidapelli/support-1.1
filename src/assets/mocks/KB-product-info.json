@@ -1,0 +1,207 @@
+{
+  "emcData": [
+    {
+      "value": "",
+      "name": "Select EMC details"
+    },
+    {
+      "value": "op1",
+      "name": "EMC - 8074820595"
+    },
+    {
+      "value": "op1",
+      "name": "EMC - 8074835595"
+    },
+    {
+      "value": "op1",
+      "name": "EMC - 80748378595"
+    },
+    {
+      "value": "op1",
+      "name": "EMC - 80741212195"
+    },
+    {
+      "value": "op1",
+      "name": "EMC - 8074883928395"
+    }
+  ],
+  "contactLink": "https://vmware.github.io/clarity",
+  "productType": [{
+    "key": "onPremise",
+    "value": "onPremise",
+    "name": "On Premise"
+  }, {
+    "key": "cloud",
+    "value": "",
+    "name": "Cloud Services"
+  }],
+  "serviceData": [
+    {
+      "value": "default",
+      "name": "Select your service"
+    },
+    {
+      "value": "op1",
+      "name": "service - 8074835595"
+    },
+    {
+      "value": "op1",
+      "name": "service - 80748378595"
+    },
+    {
+      "value": "op1",
+      "name": "service - 80741212195"
+    },
+    {
+      "value": "op1",
+      "name": "service - 8074883928395"
+    }
+  ],
+  "serviceIdList": [
+    {
+      "value": "default",
+      "name": "Select service ID"
+    },
+    {
+      "value": "op1",
+      "name": "8074835595"
+    },
+    {
+      "value": "op1",
+      "name": "80748378595"
+    },
+    {
+      "value": "op1",
+      "name": "80741212195"
+    },
+    {
+      "value": "op1",
+      "name": "8074883928395"
+    }
+  ],
+  "supportType": [
+    {
+      "value": "default",
+      "name": "Select support type"
+    },
+    {
+      "value": "op1",
+      "name": "Production support"
+    },
+    {
+      "value": "op1",
+      "name": "Testing"
+    },
+    {
+      "value": "op1",
+      "name": "Front end development"
+    },
+    {
+      "value": "op1",
+      "name": "Bug fixing"
+    }
+  ],
+  "priority": [
+    {
+      "value": "default",
+      "name": "Select priority"
+    },
+    {
+      "value": "High",
+      "name": "High"
+    },
+    {
+      "value": "Medium",
+      "name": "Medium"
+    },
+    {
+      "value": "Low",
+      "name": "Low"
+    }
+  ],
+  "description": "",
+  "typeOfSupport": [
+    {
+      "value": "default",
+      "name": "Select type of support"
+    },
+    {
+      "value": "tech",
+      "name": "Technical"
+    },
+    {
+      "value": "nonTech",
+      "name": "Non Technical"
+    },
+    {
+      "value": "others",
+      "name": "Others"
+    }
+  ],
+  "toolOrSoftware": [
+    {
+      "value": "default",
+      "name": "Select the tool"
+    },
+    {
+      "value": "vSphere6",
+      "name": "vSphere v6.0"
+    },
+    {
+      "value": "vSphere5",
+      "name": "vSphere v5.0"
+    },
+    {
+      "value": "vSphere4",
+      "name": "vSphere v4.0"
+    },
+    {
+      "value": "vSphere3",
+      "name": "vSphere v3.0"
+    }
+  ],
+  "typeOfIssue": [
+    {
+      "value": "default",
+      "name": "Select the type of issue"
+    },
+    {
+      "value": "fault",
+      "name": "Fault"
+    },
+    {
+      "value": "suggestion",
+      "name": "Suggestion"
+    }
+  ],
+  "KBArticles": [
+    {
+      "linkText": "Load balancing for VMware Horizon View",
+      "url": "https://vmware.github.io/clarity",
+      "desc": "When you add your AWS public cloud account to VMware Cloud services, you establish a connection that."
+    },{
+      "linkText": "Load balancing for VMware Horizon View",
+      "url": "https://vmware.github.io/clarity",
+      "desc": "When you add your AWS public cloud account to VMware Cloud services, you establish a connection that."
+    },{
+      "linkText": "Load balancing for VMware Horizon View",
+      "url": "https://vmware.github.io/clarity",
+      "desc": "When you add your AWS public cloud account to VMware Cloud services, you establish a connection that."
+    },{
+      "linkText": "Load balancing for VMware Horizon View",
+      "url": "https://vmware.github.io/clarity",
+      "desc": "When you add your AWS public cloud account to VMware Cloud services, you establish a connection that."
+    },{
+      "linkText": "Load balancing for VMware Horizon View",
+      "url": "https://vmware.github.io/clarity",
+      "desc": "When you add your AWS public cloud account to VMware Cloud services, you establish a connection that."
+    },{
+      "linkText": "Load balancing for VMware Horizon View",
+      "url": "https://vmware.github.io/clarity",
+      "desc": "When you add your AWS public cloud account to VMware Cloud services, you establish a connection that."
+    }
+  ],
+  "KBArticleTitle": "Top KB articles based on your selections",
+  "btnLabel": "VCLOUD AIR"
+
+}
