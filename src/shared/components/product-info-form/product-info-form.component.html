@@ -2,18 +2,11 @@
     <form clrForm class="text-left col-md-12" (submit)="onFormDataSubmit()">
       <div class="row clr-row emc-container">
         <div class="col-md-6">
-          <clr-dropdown>
-            <button type="button" class="btn btn-outline-primary" clrDropdownTrigger>
-              <span class="pr-3">{{selectedEmcName}}</span>
-              <clr-icon shape="caret down"></clr-icon>
-            </button>
-            <clr-dropdown-menu *clrIfOpen>
-              <div *ngFor="let emcData of productInfo.emcData; let i = index;">
-                <button type="button" clrDropdownItem (click)="changeEmcData(emcData.name)">{{emcData.name}}</button>
-                <div class="dropdown-divider" *ngIf="i !== productInfo.emcData.length-1"></div>
-              </div>
-            </clr-dropdown-menu>
-          </clr-dropdown>
+          <div class="select">
+            <select id="selects_0" name="emcData" [(ngModel)]="productForm.emcData">
+              <option *ngFor="let option of productInfo.emcData" [value]="option.value">{{option.name}}</option>
+            </select>
+          </div>
         </div>
         <div class="col-md-6 text-right">
           <a [href]="productInfo.contactLink">Update Contact Details</a>
@@ -86,7 +79,7 @@
           <div class="clr-form-control">
             <div class="clr-control-container">
               <div class="clr-textarea-wrapper">
-                <textarea id="textarea-basic-error" placeholder="Enter value here" class="clr-textarea" name="desc" [(ngModel)]="productForm.desc"></textarea>
+                <textarea id="textarea-basic-error" placeholder="Enter value here" class="clr-textarea" name="desc" [(ngModel)]="productForm.desc"  (keyup)="onProductDescriptionChange($event)"></textarea>
                 <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
               </div>
               <span class="clr-subtext text-right">Minimum 4000 Characters</span>

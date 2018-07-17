@@ -14,8 +14,12 @@
       </div>
     </div>
   </div> -->
-
-      <div class="col-md-11 mx-auto">
+  <div class="row mt-1" *ngIf="spinner">
+    <span class="spinner spinner-sm mx-auto">
+        Loading...
+    </span>
+    </div>
+      <div class="col-md-11 mx-auto" *ngIf="kbList">
         <h4 id="link1">{{kbList.headingText}}</h4>
         <div id="content1" class="mt-1">
           <div class="row mb-1" *ngFor="let item of kbList.results; let i = index">
