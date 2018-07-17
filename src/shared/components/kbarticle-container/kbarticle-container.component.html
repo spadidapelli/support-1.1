@@ -24,7 +24,7 @@
               <div innerHTML="{{item.text}}"></div>
             </div>
           </div>
-          <div class="createSupportRequest mt-1">
+          <div class="createSupportRequest mt-1" *ngIf="showSupportBtnList">
             <div class="text-center">Cannot find what you are looking for?</div>
             <div class="text-center">
               <button class="btn btn-primary">Ask the community</button><button class="btn btn-primary" [routerLink]="['/createsupportrequest']">Create support request</button></div>

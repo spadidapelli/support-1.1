@@ -9,6 +9,7 @@ import { Component, OnInit, ElementRef, Input, AfterViewInit } from '@angular/co
 export class KBArticleContainerComponent implements OnInit, AfterViewInit {
   @Input() kbList: any;
   @Input() wrapperClass: string;
+  @Input() showSupportBtnList: boolean;
   constructor(private elementRef: ElementRef) {
   }
 
