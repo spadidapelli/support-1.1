@@ -17,21 +17,16 @@ export class CreatesupportrequestComponent implements OnInit, OnDestroy {
   KBArticleList$: Observable<any>;
   kbList: any;
   showKbList = false;
+  spinner = true;
   constructor(private dataService: DataApiService) { }
 
   ngOnInit() {
     this.productInfo$ = this.dataService.getKBProductInfo();
     this.productInfo$.pipe(takeUntil(this.destroy$)).subscribe((data) => {
       this.productData = data;
+      this.spinner = false;
     }, (error) => {
       console.error(error);
-    });
-
-    this.dataService.KBArticleList$.subscribe((data) => {
-      if (data) {
-        this.kbList = data;
-        this.showKbList = true;
-      }
     });
   }
 

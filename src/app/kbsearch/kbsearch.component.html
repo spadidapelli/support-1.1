@@ -9,11 +9,11 @@
       aria-label="Start by typing your issue, SR number or product…. " (keyup)="onKey($event)" />
   </div>
 </div>
-<div class="row mt-1" *ngIf="spinner">
+<!-- <div class="row mt-1" *ngIf="spinner">
 <span class="spinner spinner-sm mx-auto">
     Loading...
 </span>
-</div>
+</div> -->
 <div class="clr-row row search mt-1" *ngIf="showKbList">
   <!-- <div class="col-md-8 mx-auto">
     <h4 id="link1">Top KB article</h4>
@@ -31,5 +31,5 @@
       </div>
     </div>
   </div> -->
-  <app-kbarticle-container [kbList]="kbList" [wrapperClass]="'col-md-8 mx-auto'"></app-kbarticle-container>
+  <app-kbarticle-container [wrapperClass]="'col-md-8 mx-auto'" [showSupportBtnList]="true"></app-kbarticle-container>
 </div>

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { DataApiService } from '../../shared/services/data-api.service';
 @Component({
@@ -8,17 +9,16 @@ import { DataApiService } from '../../shared/services/data-api.service';
   templateUrl: './kbsearch.component.html',
   styleUrls: ['./kbsearch.component.scss']
 })
-export class KbsearchComponent implements OnInit {
+export class KbsearchComponent implements OnInit, OnDestroy {
   kbList = {};
   showKbList = false;
   spinner = false;
+  destroy$ = new Subject<boolean>();
   constructor(private http: HttpClient, private dataService: DataApiService) { }
 
   ngOnInit() {
-    this.dataService.KBArticleList$.subscribe((data) => {
+    this.dataService.KBArticleList$.pipe(takeUntil(this.destroy$)).subscribe((data) => {
       if (data) {
-        this.kbList = data;
-        this.showKbList = true;
         this.spinner = false;
       }
     });
@@ -27,12 +27,14 @@ export class KbsearchComponent implements OnInit {
   onKey(event: any) {
     this.spinner = true;
     if (event.target.value.length > 2) {
-      /* let url = 'http://localhost:4200/assets/kbList.json';
-      this.http.get(url).subscribe(res => this.kbList = res); */
-      this.dataService.getKBArticleList();
+      this.showKbList = true;
     } else {
       this.showKbList = false;
       this.spinner = false;
     }
+  }
+
+  ngOnDestroy() {
+    this.destroy$.unsubscribe();
   }
 }

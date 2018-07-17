@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, Input } from '@angular/core';
 
+import { DataApiService } from '../../services/data-api.service';
 @Component({
   selector: 'app-product-info-form',
   templateUrl: './product-info-form.component.html',
@@ -9,6 +10,7 @@ export class ProductInfoFormComponent implements OnInit {
   @Input() productInfo: any;
   selectedEmcName = 'Select EMC details';
   productForm = {
+    emcData: 'default',
     serviceName: 'default',
     selectedProductType: 'onPremise',
     serviceId: 'default',
@@ -19,7 +21,7 @@ export class ProductInfoFormComponent implements OnInit {
     priority: 'default',
     desc: ''
   };
-  constructor(elementRef: ElementRef) {
+  constructor(elementRef: ElementRef, private dataService: DataApiService) {
     elementRef.nativeElement.classList.add('col-md-6');
   }
 
@@ -32,6 +34,10 @@ export class ProductInfoFormComponent implements OnInit {
 
   onFormDataSubmit() {
     alert(JSON.stringify(this.productForm));
+  }
+
+  onProductDescriptionChange() {
+    this.dataService.onDescriptionChange$.next(true);
   }
 
 }

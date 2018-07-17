@@ -1,7 +1,7 @@
 {
   "emcData": [
     {
-      "value": "",
+      "value": "default",
       "name": "Select EMC details"
     },
     {

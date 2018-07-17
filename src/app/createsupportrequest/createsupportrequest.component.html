@@ -1,4 +1,10 @@
-<div class="clr-row row text-center support-enquiry-container mt-2">
-  <app-product-info-form *ngIf="(productInfo$ | async) as productInfo" [productInfo]="productInfo"></app-product-info-form>
-  <app-kbarticle-container *ngIf="showKbList" [kbList]="kbList" [wrapperClass]="'col-md-6'"></app-kbarticle-container>
+<div class="row mt-1" *ngIf="spinner">
+  <span class="spinner spinner-sm mx-auto">
+      Loading...
+  </span>
+  </div>
+  <h4 class="mt-2">Create Support Request</h4>
+<div class="clr-row row text-center support-enquiry-container mt-1">
+  <app-product-info-form *ngIf="productData" [productInfo]="productData"></app-product-info-form>
+  <app-kbarticle-container [wrapperClass]="'col-md-6'" [showSupportBtnList]="false"></app-kbarticle-container>
 </div>
