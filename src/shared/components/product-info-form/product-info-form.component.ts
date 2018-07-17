@@ -7,7 +7,7 @@ import { DataApiService } from '../../services/data-api.service';
   styleUrls: ['./product-info-form.component.scss']
 })
 export class ProductInfoFormComponent implements OnInit {
-  @Input() productInfo: any;
+  @Input() productInfo: any = {};
   selectedEmcName = 'Select EMC details';
   productForm = {
     emcData: 'default',
