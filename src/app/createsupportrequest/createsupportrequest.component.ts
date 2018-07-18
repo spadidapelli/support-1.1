@@ -14,9 +14,6 @@ export class CreatesupportrequestComponent implements OnInit, OnDestroy {
   productInfo$: Observable<any>;
   productData: any;
   destroy$ =  new Subject<boolean>();
-  KBArticleList$: Observable<any>;
-  kbList: any;
-  showKbList = false;
   spinner = true;
   constructor(private dataService: DataApiService) { }
 

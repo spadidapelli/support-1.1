@@ -1,6 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { ElementRef } from '@angular/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { BehaviorSubject } from 'rxjs';
 
 import { KBArticleContainerComponent } from './kbarticle-container.component';
+import { DataApiService } from '../../services/data-api.service';
+class MockDataApiService {
+  onDescriptionChange$ = new BehaviorSubject<boolean>(false);
+  KBArticleList$ = new BehaviorSubject<any>(null);
+  getKBArticleList() {
+    this.KBArticleList$.next({key: 'value'});
+  }
+}
+export class MockElementRef {
+  classList: DOMTokenList = null;
+  nativeElement = {
+    classList: this.classList
+  };
+ }
 
 describe('KBArticleContainerComponent', () => {
   let component: KBArticleContainerComponent;
@@ -8,7 +27,14 @@ describe('KBArticleContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ KBArticleContainerComponent ]
+      declarations: [ KBArticleContainerComponent ],
+      imports: [ RouterModule,
+                 HttpClientModule,
+                 HttpClientTestingModule],
+      providers: [
+                  { provide: DataApiService, useClass: MockDataApiService },
+                  { provide: ElementRef, useClass: MockElementRef },
+              ]
     })
     .compileComponents();
   }));
@@ -18,8 +44,43 @@ describe('KBArticleContainerComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+  afterEach(function() {
+    jasmine.clock().uninstall();
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should check ngOnInit - KBArticleList$', inject( [ DataApiService ], (dataService: DataApiService) => {
+    spyOn(dataService, 'getKBArticleList');
+    component.ngOnInit();
+    expect(dataService.getKBArticleList).toHaveBeenCalled();
+    dataService.KBArticleList$.subscribe((data) => {
+      expect(component.kbList).toEqual(data);
+      expect(component.spinner).toBeFalsy();
+    });
+  }));
+
+  it('should check ngOnInit - onDescriptionChange$', inject( [ DataApiService ], (dataService: DataApiService) => {
+    jasmine.clock().install();
+    spyOn(dataService, 'getKBArticleList');
+    dataService.onDescriptionChange$.next(true);
+    dataService.onDescriptionChange$.subscribe((isDescChanged) => {
+      expect(component.kbList).toEqual(null);
+      expect(component.spinner).toBeTruthy();
+      jasmine.clock().tick(400);
+      expect(dataService.getKBArticleList).toHaveBeenCalled();
+    });
+  }));
+  it('should check ngAfterViewInit', inject([ ElementRef ], ( elementRef: ElementRef ) => {
+    component.wrapperClass = 'col-md-6';
+    component.ngAfterViewInit();
+    expect(elementRef.nativeElement.classList).toEqual(null);
+  }));
+  it('should check ngOnDestroy', inject([ ElementRef ], ( elementRef: ElementRef ) => {
+    spyOn(component.destroy$, 'unsubscribe');
+    component.ngOnDestroy();
+    expect(component.destroy$.unsubscribe).toHaveBeenCalled();
+  }));
 });
