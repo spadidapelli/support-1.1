@@ -10,8 +10,8 @@ import { Subject } from 'rxjs';
   styleUrls: ['./kbarticle-container.component.scss']
 })
 export class KBArticleContainerComponent implements OnInit, AfterViewInit, OnDestroy {
-  @Input() wrapperClass: string;
-  @Input() showSupportBtnList: boolean;
+  @Input() wrapperClass = '';
+  @Input() showSupportBtnList = false;
   kbList: any;
   destroy$ = new Subject<boolean>();
   spinner = true;
