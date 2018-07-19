@@ -1,6 +1,8 @@
-import { Component, OnInit, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, ViewChild } from '@angular/core';
 
 import { DataApiService } from '../../services/data-api.service';
+import { fromEvent } from 'rxjs';
+import { map, filter, debounceTime } from 'rxjs/operators';
 @Component({
   selector: 'app-product-info-form',
   templateUrl: './product-info-form.component.html',
@@ -8,6 +10,7 @@ import { DataApiService } from '../../services/data-api.service';
 })
 export class ProductInfoFormComponent implements OnInit {
   @Input() productInfo: any = {};
+  @ViewChild('kbSearchField') kbSearchField: ElementRef;
   selectedEmcName = 'Select EMC details';
   productForm = {
     emcData: 'default',
@@ -26,6 +29,13 @@ export class ProductInfoFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    fromEvent(this.kbSearchField.nativeElement, 'keyup')
+    .pipe(
+    map((evt: any) => event.target['value']),
+    debounceTime(1000))
+    .subscribe((searchText) => {
+      this.dataService.onDescriptionChange$.next( searchText );
+    });
   }
 
   changeEmcData(name) {
@@ -36,8 +46,8 @@ export class ProductInfoFormComponent implements OnInit {
     alert(JSON.stringify(this.productForm));
   }
 
-  onProductDescriptionChange() {
-    this.dataService.onDescriptionChange$.next(true);
-  }
+  /* onProductDescriptionChange(event) {
+    this.dataService.onDescriptionChange$.next(event.target.value);
+  } */
 
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 67.0.3396 (Windows 10.0.0)" package="" timestamp="2018-07-19T09:36:09" id="0" hostname="USHYDVUSUNKARA1" tests="26" errors="0" failures="0" time="7.477">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"/>
+  </properties>
+  <testcase name="AppComponent should create the app" time="1.077" classname="AppComponent"/>
+  <testcase name="AppComponent should have as title 'app'" time="0.791" classname="AppComponent"/>
+  <testcase name="AppComponent should render title in a h1 tag" time="0.676" classname="AppComponent"/>
+  <testcase name="CreatesupportrequestComponent should create" time="0.745" classname="CreatesupportrequestComponent"/>
+  <testcase name="CreatesupportrequestComponent should check ngOnInit" time="0.652" classname="CreatesupportrequestComponent"/>
+  <testcase name="CreatesupportrequestComponent should check ngOnInit - error scenario" time="0.657" classname="CreatesupportrequestComponent"/>
+  <testcase name="CreatesupportrequestComponent should check ngOnDestroy" time="0.45" classname="CreatesupportrequestComponent"/>
+  <testcase name="HeaderComponent should create" time="0.374" classname="HeaderComponent"/>
+  <testcase name="KbsearchComponent should create" time="0.037" classname="KbsearchComponent"/>
+  <testcase name="KbsearchComponent should check ngOnInit" time="0.033" classname="KbsearchComponent"/>
+  <testcase name="KbsearchComponent should check ngOnInit - KBArticleList is empty" time="0.041" classname="KbsearchComponent"/>
+  <testcase name="KbsearchComponent should check onKey - value length > 2" time="0.03" classname="KbsearchComponent"/>
+  <testcase name="KbsearchComponent should check onKey - value length &lt;= 2" time="0.025" classname="KbsearchComponent"/>
+  <testcase name="KBArticleContainerComponent should create" time="0.025" classname="KBArticleContainerComponent"/>
+  <testcase name="KBArticleContainerComponent should check ngOnInit - KBArticleList$" time="0.027" classname="KBArticleContainerComponent"/>
+  <testcase name="KBArticleContainerComponent should check ngOnInit - onDescriptionChange$" time="0.026" classname="KBArticleContainerComponent"/>
+  <testcase name="KBArticleContainerComponent should check ngAfterViewInit" time="0.024" classname="KBArticleContainerComponent"/>
+  <testcase name="KBArticleContainerComponent should check ngOnDestroy" time="0.021" classname="KBArticleContainerComponent"/>
+  <testcase name="ProductInfoFormComponent should create" time="0.365" classname="ProductInfoFormComponent"/>
+  <testcase name="ProductInfoFormComponent should changeEmcData" time="0.493" classname="ProductInfoFormComponent"/>
+  <testcase name="ProductInfoFormComponent should check onFormDataSubmit" time="0.418" classname="ProductInfoFormComponent"/>
+  <testcase name="ProductInfoFormComponent should check onProductDescriptionChange" time="0.431" classname="ProductInfoFormComponent"/>
+  <testcase name="DataApiService should be created" time="0.014" classname="DataApiService"/>
+  <testcase name="DataApiService should check getKBProductInfo" time="0.015" classname="DataApiService"/>
+  <testcase name="DataApiService should check getKBArticleList - data available" time="0.015" classname="DataApiService"/>
+  <testcase name="DataApiService should check getKBArticleList - data not available" time="0.015" classname="DataApiService"/>
+  <system-out>
+    <![CDATA[Chrome 67.0.3396 (Windows 10.0.0) ERROR: 'Error during cleanup of component', Object{component: AppComponent{title: 'app'}, stacktrace: TypeError{ngDebugContext: DebugContext_{view: ..., nodeIndex: ..., nodeDef: ..., elDef: ..., elView: ...}, ngErrorLogger: function () { ... }}}
+,Chrome 67.0.3396 (Windows 10.0.0) ERROR: 'Error during cleanup of component', Object{component: AppComponent{title: 'app'}, stacktrace: TypeError{ngDebugContext: DebugContext_{view: ..., nodeIndex: ..., nodeDef: ..., elDef: ..., elView: ...}, ngErrorLogger: function () { ... }}}
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

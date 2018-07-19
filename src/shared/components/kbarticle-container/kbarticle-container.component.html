@@ -20,12 +20,12 @@
     </span>
     </div>
       <div class="col-md-11 mx-auto" *ngIf="kbList">
-        <h4 id="link1">{{kbList.headingText}}</h4>
+        <h4 id="link1">{{kbList.pipeline}}</h4>
         <div id="content1" class="mt-1">
           <div class="row mb-1" *ngFor="let item of kbList.results; let i = index">
-            <div class="col-md-12">
-              <div> <a href="{{item.url}}" class="kbURL" innerHTML="{{item.title}}"></a> </div>
-              <div innerHTML="{{item.text}}"></div>
+            <div class="col-md-12 text-left">
+              <div> <a href="{{item.PrintableUri}}" class="kbURL" innerHTML="{{item.title}}"></a> </div>
+              <div innerHTML="{{item.excerpt}}"></div>
             </div>
           </div>
           <div class="createSupportRequest mt-1" *ngIf="showSupportBtnList">
