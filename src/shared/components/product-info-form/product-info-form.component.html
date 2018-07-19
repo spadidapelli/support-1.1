@@ -79,7 +79,7 @@
           <div class="clr-form-control">
             <div class="clr-control-container">
               <div class="clr-textarea-wrapper">
-                <textarea id="textarea-basic-error" placeholder="Enter value here" class="clr-textarea" name="desc" [(ngModel)]="productForm.desc"  (keyup)="onProductDescriptionChange($event)"></textarea>
+                <textarea id="textarea-basic-error" placeholder="Enter value here" class="clr-textarea" name="desc" [(ngModel)]="productForm.desc"  #kbSearchField ></textarea>
                 <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
               </div>
               <span class="clr-subtext text-right">Minimum 4000 Characters</span>
@@ -87,7 +87,7 @@
           </div>
         </div>
         <div class="col-md-12 text-center">
-          <input type="submit" class="btn btn-info-outline submit-btn px-1" value="submit" />
+          <input type="submit" class="btn btn-primary submit-btn px-1" value="submit" />
         </div>
       </div>
       <!-- Product options input fields ends here -->

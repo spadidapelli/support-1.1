@@ -19,20 +19,20 @@ export class KBArticleContainerComponent implements OnInit, AfterViewInit, OnDes
   }
 
   ngOnInit() {
-    this.dataService.getKBArticleList();
     this.dataService.KBArticleList$.pipe(takeUntil(this.destroy$)).subscribe((data) => {
       if (data) {
         this.kbList = data;
         this.spinner = false;
       }
     });
-    this.dataService.onDescriptionChange$.subscribe((isDescChanged) => {
-      if (isDescChanged) {
+    this.dataService.onDescriptionChange$.subscribe((searchString) => {
+      if (searchString) {
         this.spinner = true;
         this.kbList = null;
-        setTimeout(() => {
-          this.dataService.getKBArticleList();
-        }, 400);
+        this.dataService.getKBArticleList(searchString);
+      } else {
+        this.kbList = null;
+        this.spinner = false;
       }
     });
   }
