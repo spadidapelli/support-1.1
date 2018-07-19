@@ -22,12 +22,29 @@
       <div class="col-md-11 mx-auto" *ngIf="kbList">
         <h4 id="link1">{{kbList.pipeline}}</h4>
         <div id="content1" class="mt-1">
-          <div class="row mb-1" *ngFor="let item of kbList.results; let i = index">
+          <div class="row mb-1" *ngFor="let item of currResults; let i = index">
             <div class="col-md-12 text-left">
               <div> <a href="{{item.PrintableUri}}" class="kbURL" innerHTML="{{item.title}}"></a> </div>
               <div innerHTML="{{item.excerpt}}"></div>
             </div>
           </div>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination text-center">
+              <li class="page-item btn mx-0 my-0 px-0 py-0" [ngClass]="(currPageIndex == 1) ? 'btn-disabled' : 'btn-info-outline'"  (click)="showPage(null, 'prev')">
+                <a class="page-link" href="#" (click)="$event.preventDefault();" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item btn mx-0 my-0 px-0 py-0" (click)="showPage((i+1), null)" [ngClass]="(currPageIndex == i+1) ? 'btn-primary' : 'btn-info-outline'"  *ngFor="let page of numOfPages; let i = index;"><a class="page-link" href="#" (click)="$event.preventDefault();" [innerHTML]="(i+1)"></a></li>
+              <li class="page-item btn mx-0 my-0 px-0 py-0" [ngClass]="(currPageIndex == numOfPages.length) ? 'btn-disabled' : 'btn-info-outline'"   (click)="showPage(null, 'next')">
+                <a class="page-link" href="#" (click)="$event.preventDefault();" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
           <div class="createSupportRequest mt-1" *ngIf="showSupportBtnList">
             <div class="text-center">Cannot find what you are looking for?</div>
             <div class="text-center">
