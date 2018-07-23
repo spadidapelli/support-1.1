@@ -31,8 +31,8 @@ export class ProductInfoFormComponent implements OnInit {
   ngOnInit() {
     fromEvent(this.kbSearchField.nativeElement, 'keyup')
     .pipe(
-    map((evt: any) => event.target['value']),
-    debounceTime(1000))
+    map((event: any) => event.target['value']),
+    debounceTime(500))
     .subscribe((searchText) => {
       this.dataService.onDescriptionChange$.next( searchText );
     });

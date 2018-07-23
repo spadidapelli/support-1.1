@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CookieService } from 'ngx-cookie-service';
 
 import { AppComponent } from './app.component';
 import { ClarityModule, ClrFormsNextModule } from '@clr/angular';
@@ -34,7 +33,7 @@ import { ProductInfoFormComponent } from '../shared/components/product-info-form
     ClrFormsNextModule,
     FormsModule
   ],
-  providers: [CookieService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

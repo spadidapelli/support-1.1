@@ -26,9 +26,9 @@ export class KbsearchComponent implements OnInit, OnDestroy {
 
     fromEvent(this.kbSearchField.nativeElement, 'keyup')
     .pipe(
-    map((evt: any) => event.target['value']),
+    map((event: any) => event.target['value']),
     filter((text: string) => text.length > 2),
-    debounceTime(1000))
+    debounceTime(500))
     .subscribe((searchText) => {
       this.spinner = true;
       this.dataService.onDescriptionChange$.next( searchText );
