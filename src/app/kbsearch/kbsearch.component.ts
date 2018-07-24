@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/co
 import { HttpClient } from '@angular/common/http';
 
 import { Subject, fromEvent } from 'rxjs';
-import { takeUntil, map, filter, debounceTime } from 'rxjs/operators';
+import { takeUntil, map, filter, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { DataApiService } from '../../shared/services/data-api.service';
 @Component({
   selector: 'app-kbsearch',
@@ -27,8 +27,7 @@ export class KbsearchComponent implements OnInit, OnDestroy {
     fromEvent(this.kbSearchField.nativeElement, 'keyup')
     .pipe(
     map((event: any) => event.target['value']),
-    filter((text: string) => text.length > 2),
-    debounceTime(500))
+    debounceTime(500), distinctUntilChanged())
     .subscribe((searchText) => {
       this.spinner = true;
       this.dataService.onDescriptionChange$.next( searchText );
