@@ -2,6 +2,8 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ClarityModule, ClrFormsNextModule } from '@clr/angular';
 import { FormsModule } from '@angular/forms';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -25,7 +27,8 @@ describe('AppComponent', () => {
       imports: [ RouterTestingModule,
                  ClarityModule,
                  ClrFormsNextModule,
-                 FormsModule
+                 FormsModule,
+                 HttpClientTestingModule
                 ]
     }).compileComponents();
   }));
