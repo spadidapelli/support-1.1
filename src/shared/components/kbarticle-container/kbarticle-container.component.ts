@@ -1,8 +1,8 @@
 import { Component, OnInit, ElementRef, Input, AfterViewInit, OnDestroy } from '@angular/core';
 
 import { DataApiService } from '../../services/data-api.service';
-import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { takeUntil, switchMap } from 'rxjs/operators';
+import { Subject, empty } from 'rxjs';
 
 @Component({
   selector: 'app-kbarticle-container',
@@ -19,13 +19,30 @@ export class KBArticleContainerComponent implements OnInit, AfterViewInit, OnDes
   }
 
   ngOnInit() {
-    this.dataService.KBArticleList$.pipe(takeUntil(this.destroy$)).subscribe((data) => {
+    /* this.dataService.KBArticleList$.pipe(takeUntil(this.destroy$)).subscribe((data) => {
       if (data) {
         this.kbList = data;
         this.spinner = false;
       }
-    });
-    this.dataService.onDescriptionChange$.subscribe((searchString) => {
+    }); */
+    this.dataService.onDescriptionChange$.pipe(
+      switchMap((searchString) => {
+        if (searchString && searchString.length > 2) {
+          this.spinner = true;
+          this.kbList = null;
+          return this.dataService.getKBArticleList(searchString);
+        } else {
+          this.kbList = null;
+          this.spinner = false;
+          return empty();
+        }
+      })).subscribe(
+        (data) => {
+          this.kbList = data;
+          this.spinner = false;
+        }
+      );
+      /* .subscribe((searchString) => {
       if (searchString) {
         this.spinner = true;
         this.kbList = null;
@@ -34,7 +51,7 @@ export class KBArticleContainerComponent implements OnInit, AfterViewInit, OnDes
         this.kbList = null;
         this.spinner = false;
       }
-    });
+    }); */
   }
 
   ngAfterViewInit() {

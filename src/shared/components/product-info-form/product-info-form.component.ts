@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef, Input, ViewChild } from '@angular/core';
 
 import { DataApiService } from '../../services/data-api.service';
 import { fromEvent } from 'rxjs';
-import { map, filter, debounceTime } from 'rxjs/operators';
+import { map, filter, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 @Component({
   selector: 'app-product-info-form',
   templateUrl: './product-info-form.component.html',
@@ -32,7 +32,7 @@ export class ProductInfoFormComponent implements OnInit {
     fromEvent(this.kbSearchField.nativeElement, 'keyup')
     .pipe(
     map((event: any) => event.target['value']),
-    debounceTime(500))
+    debounceTime(500), distinctUntilChanged())
     .subscribe((searchText) => {
       this.dataService.onDescriptionChange$.next( searchText );
     });
