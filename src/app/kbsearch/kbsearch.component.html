@@ -15,7 +15,7 @@
 </span>
 </div> -->
 
-<div class="row mt-1" *ngIf="!showKbList">
+<div class="row mt-3" *ngIf="!showKbList">
     <div class="col-md-12 col-lg-12">
         <clr-tabs>
             <clr-tab>
@@ -30,10 +30,10 @@
 
                         <clr-dg-row *ngFor="let item of allSupportRequest1.results">
                             <clr-dg-cell>
-                                <a href="/supportrequestdetails">{{item.supportRequestId }}</a>
-                                <span class="badge badge-warning" *ngIf="item.status=='On hold'">{{item.status}}</span>
-                                <span class="badge badge-success" *ngIf="item.status=='In progress'">{{item.status}}</span>
-                                <span class="badge badge-blue" *ngIf="item.status=='Closed'">{{item.status}}</span>
+                                <a href="/supportrequestdetails">{{item.supportRequestId }} </a>
+                                <span class="badge badge-warning" *ngIf="item.status=='On hold'"> {{item.status}}</span>
+                                <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
+                                <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
                             </clr-dg-cell>
                             <clr-dg-cell>{{item.severity}}</clr-dg-cell>
                             <clr-dg-cell>{{item.lastUpdateDate}}</clr-dg-cell>
@@ -55,10 +55,10 @@
 
                         <clr-dg-row *ngFor="let item of openSupportRequest1.results">
                             <clr-dg-cell>
-                                <a href="/supportrequestdetails">{{item.supportRequestId }}</a>
-                                <span class="badge badge-warning" *ngIf="item.status=='On hold'">{{item.status}}</span>
-                                <span class="badge badge-success" *ngIf="item.status=='In progress'">{{item.status}}</span>
-                                <span class="badge badge-blue" *ngIf="item.status=='Closed'">{{item.status}}</span>
+                                <a href="/supportrequestdetails">{{item.supportRequestId }} </a>
+                                <span class="badge badge-warning" *ngIf="item.status=='On hold'"> {{item.status}}</span>
+                                <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
+                                <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
                             </clr-dg-cell>
                             <clr-dg-cell>{{item.severity}}</clr-dg-cell>
                             <clr-dg-cell>{{item.lastUpdateDate}}</clr-dg-cell>
@@ -80,10 +80,10 @@
 
                         <clr-dg-row *ngFor="let item of closedSupportRequest1.results">
                             <clr-dg-cell>
-                                <a href="/supportrequestdetails">{{item.supportRequestId }}</a>
-                                <span class="badge badge-warning" *ngIf="item.status=='On hold'">{{item.status}}</span>
-                                <span class="badge badge-success" *ngIf="item.status=='In progress'">{{item.status}}</span>
-                                <span class="badge badge-blue" *ngIf="item.status=='Closed'">{{item.status}}</span>
+                                <a href="/supportrequestdetails">{{item.supportRequestId }} </a>
+                                <span class="badge badge-warning" *ngIf="item.status=='On hold'"> {{item.status}}</span>
+                                <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
+                                <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
                             </clr-dg-cell>
                             <clr-dg-cell>{{item.severity}}</clr-dg-cell>
                             <clr-dg-cell>{{item.lastUpdateDate}}</clr-dg-cell>
@@ -106,9 +106,9 @@
                         <clr-dg-row *ngFor="let item of supportWatchList1.results">
                             <clr-dg-cell>
                                 <a href="/supportrequestdetails">{{item.supportRequestId }}</a>
-                                <span class="badge badge-warning" *ngIf="item.status=='On hold'">{{item.status}}</span>
-                                <span class="badge badge-success" *ngIf="item.status=='In progress'">{{item.status}}</span>
-                                <span class="badge badge-blue" *ngIf="item.status=='Closed'">{{item.status}}</span>
+                                <span class="badge badge-warning" *ngIf="item.status=='On hold'"> {{item.status}}</span>
+                                <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
+                                <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
                             </clr-dg-cell>
                             <clr-dg-cell>{{item.requester}}</clr-dg-cell>
                             <clr-dg-cell>{{item.severity}}</clr-dg-cell>
