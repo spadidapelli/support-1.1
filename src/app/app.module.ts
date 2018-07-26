@@ -10,9 +10,13 @@ import { KbsearchComponent } from './kbsearch/kbsearch.component';
 import { CreatesupportrequestComponent } from './createsupportrequest/createsupportrequest.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { KBArticleContainerComponent } from '../shared/components/kbarticle-container/kbarticle-container.component';
 import { ProductInfoFormComponent } from '../shared/components/product-info-form/product-info-form.component';
+import { SupportrequestdetailsComponent } from './supportrequestdetails/supportrequestdetails.component';
+import { UploadFileComponent } from './upload-file/upload-file.component';
+import { UploadFileService } from './upload-file/upload-file.service';
+import { FileTypeToIconService } from './upload-file/file-type-to-icon-service';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { ProductInfoFormComponent } from '../shared/components/product-info-form
     CreatesupportrequestComponent,
     HeaderComponent,
     KBArticleContainerComponent,
-    ProductInfoFormComponent
+    ProductInfoFormComponent,
+    SupportrequestdetailsComponent,
+    UploadFileComponent
   ],
   imports: [
     CommonModule,
@@ -31,9 +37,10 @@ import { ProductInfoFormComponent } from '../shared/components/product-info-form
     ROUTING,
     HttpClientModule,
     ClrFormsNextModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UploadFileService,FileTypeToIconService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

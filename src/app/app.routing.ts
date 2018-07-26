@@ -9,12 +9,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CreatesupportrequestComponent } from './createsupportrequest/createsupportrequest.component';
 import { KbsearchComponent } from './kbsearch/kbsearch.component';
+import { SupportrequestdetailsComponent } from './supportrequestdetails/supportrequestdetails.component';
 
 
 export const ROUTES: Routes = [
     {path: '', redirectTo: 'support', pathMatch: 'full'},
     {path: 'support', component: KbsearchComponent},
-    {path: 'createsupportrequest', component: CreatesupportrequestComponent}
+    {path: 'createsupportrequest', component: CreatesupportrequestComponent},
+    {path: 'supportrequestdetails', component: SupportrequestdetailsComponent}
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(ROUTES);
