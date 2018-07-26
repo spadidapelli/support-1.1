@@ -12,6 +12,7 @@ import { Subject, empty } from 'rxjs';
 export class KBArticleContainerComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() wrapperClass = '';
   @Input() showSupportBtnList = false;
+  @Input() desc = null;
   kbList: any;
   destroy$ = new Subject<boolean>();
   spinner = true;
@@ -26,6 +27,7 @@ export class KBArticleContainerComponent implements OnInit, AfterViewInit, OnDes
       }
     }); */
     this.dataService.onDescriptionChange$.pipe(
+      takeUntil(this.destroy$),
       switchMap((searchString) => {
         if (searchString && searchString.length > 2) {
           this.spinner = true;
@@ -38,7 +40,7 @@ export class KBArticleContainerComponent implements OnInit, AfterViewInit, OnDes
         }
       })).subscribe(
         (data) => {
-          this.kbList = data;
+          this.kbList = (data['results'] && data['results'].length > 0) ? data['results'].slice(0, 5) : null;
           this.spinner = false;
         }
       );
@@ -54,11 +56,16 @@ export class KBArticleContainerComponent implements OnInit, AfterViewInit, OnDes
     }); */
   }
 
+  goToCreateSupportReqPage() {
+    this.dataService.KBSearchKey$.next(this.desc);
+  }
+
   ngAfterViewInit() {
     this.elementRef.nativeElement.classList = this.wrapperClass;
   }
 
   ngOnDestroy() {
+    this.destroy$.next(true);
     this.destroy$.unsubscribe();
   }
 }

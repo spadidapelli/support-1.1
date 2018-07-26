@@ -2,27 +2,19 @@
   "emcData": [
     {
       "value": "default",
-      "name": "Select EMC details"
+      "name": "1122168686 - EMC"
     },
     {
       "value": "op1",
-      "name": "EMC - 8074820595"
+      "name": "1297937933 - VMWare"
     },
     {
-      "value": "op1",
-      "name": "EMC - 8074835595"
+      "value": "op2",
+      "name": "1134637737 - Vodafone A.S."
     },
     {
-      "value": "op1",
-      "name": "EMC - 80748378595"
-    },
-    {
-      "value": "op1",
-      "name": "EMC - 80741212195"
-    },
-    {
-      "value": "op1",
-      "name": "EMC - 8074883928395"
+      "value": "op3",
+      "name": "116347364 - VMW TNS"
     }
   ],
   "contactLink": "https://vmware.github.io/clarity",
@@ -38,73 +30,73 @@
   "serviceData": [
     {
       "value": "default",
-      "name": "Select your service"
+      "name": "Select One"
     },
     {
       "value": "op1",
-      "name": "service - 8074835595"
+      "name": "VMware vCloud Air SQL"
     },
     {
-      "value": "op1",
-      "name": "service - 80748378595"
+      "value": "op2",
+      "name": "VMware vCloud Air Object Storage powered by EMC"
     },
     {
-      "value": "op1",
-      "name": "service - 80741212195"
+      "value": "op3",
+      "name": "VMware vCloud Air Object Storage powered by Google Cloud Platform"
     },
     {
-      "value": "op1",
-      "name": "service - 8074883928395"
+      "value": "op4",
+      "name": "VMware vCloud Air Virtual Private Cloud OnDemand"
     }
   ],
   "serviceIdList": [
     {
       "value": "default",
-      "name": "Select service ID"
+      "name": "Select One"
     },
     {
       "value": "op1",
-      "name": "8074835595"
+      "name": "M677565513"
     },
     {
-      "value": "op1",
-      "name": "80748378595"
+      "value": "op2",
+      "name": "S80748378595"
     },
     {
-      "value": "op1",
-      "name": "80741212195"
+      "value": "op3",
+      "name": "V80741212195"
     },
     {
-      "value": "op1",
-      "name": "8074883928395"
+      "value": "op4",
+      "name": "U8074883928395"
     }
   ],
   "supportType": [
     {
       "value": "default",
-      "name": "Select support type"
+      "name": "Select One"
     },
     {
       "value": "op1",
       "name": "Production support"
     },
     {
-      "value": "op1",
-      "name": "Testing"
+      "value": "op2",
+      "name": "Basic Supoort"
     },
     {
-      "value": "op1",
-      "name": "Front end development"
+      "value": "op3",
+      "name": "MCS"
     },
     {
-      "value": "op1",
-      "name": "Bug fixing"
+      "value": "op4",
+      "name": "BCS"
     }
   ],
   "priority": [
     {
       "value": "default",
-      "name": "Select priority"
+      "name": "Select One"
     },
     {
       "value": "High",
@@ -123,57 +115,133 @@
   "typeOfSupport": [
     {
       "value": "default",
-      "name": "Select type of support"
+      "name": "Select One"
     },
     {
       "value": "tech",
       "name": "Technical"
     },
     {
-      "value": "nonTech",
-      "name": "Non Technical"
+      "value": "prodLincensing",
+      "name": "Product Licensing or Account"
     },
     {
-      "value": "others",
-      "name": "Others"
+      "value": "genInquiry",
+      "name": "General Inquiry"
     }
   ],
   "toolOrSoftware": [
     {
       "value": "default",
-      "name": "Select the tool"
+      "name": "Select One"
     },
     {
       "value": "vSphere6",
-      "name": "vSphere v6.0"
+      "name": "VMware vShield"
     },
     {
       "value": "vSphere5",
-      "name": "vSphere v5.0"
+      "name": "VMware Fusion Pro 10.x"
     },
     {
       "value": "vSphere4",
-      "name": "vSphere v4.0"
+      "name": "VMware vSphere ESXi"
     },
     {
       "value": "vSphere3",
-      "name": "vSphere v3.0"
+      "name": "VMware vCenter Server"
     }
   ],
-  "typeOfIssue": [
-    {
-      "value": "default",
-      "name": "Select the type of issue"
-    },
-    {
-      "value": "fault",
-      "name": "Fault"
-    },
-    {
-      "value": "suggestion",
-      "name": "Suggestion"
-    }
-  ],
+  "typeOfIssue": {
+    "onPremisetech" : [
+      {
+        "value": "default",
+        "name": "Select One"
+      },
+      {
+        "value": "feature",
+        "name": "Feature Request"
+      },
+      {
+        "value": "fault",
+        "name": "Fault/Crash"
+      },
+      {
+        "value": "installation",
+        "name": "Installation"
+      },
+      {
+        "value": "network",
+        "name": "Networking"
+      }
+    ],
+    "cloudtech" : [
+      {
+        "value": "default",
+        "name": "Select One"
+      },
+      {
+        "value": "vcloudair",
+        "name": "vCloud Air"
+      },
+      {
+        "value": "vrealizeair",
+        "name": "vRealize Air"
+      },
+      {
+        "value": "vmwareonAWS",
+        "name": "VMware cloud on AWS"
+      },
+      {
+        "value": "wavefront",
+        "name": "Wavefront by VMware"
+      }
+    ],
+    "prodLincensing" : [
+      {
+        "value": "default",
+        "name": "Select One"
+      },
+      {
+        "value": "nameChange",
+        "name": "Account Name Change Request"
+      },
+      {
+        "value": "accntQueries",
+        "name": "Account Queries and Support"
+      },
+      {
+        "value": "nxstoent",
+        "name": "Conversion to NSX ENT Plus"
+      },
+      {
+        "value": "modifyusers",
+        "name": "Modify Users"
+      }
+    ],
+    "genInquiry" : [
+      {
+        "value": "default",
+        "name": "Select One"
+      },
+      {
+        "value": "communities",
+        "name": "Communities"
+      },
+      {
+        "value": "downloads",
+        "name": "Downloads"
+      },
+      {
+        "value": "education",
+        "name": "Education"
+      },
+      {
+        "value": "evaluations",
+        "name": "Evaluations"
+      }
+    ]
+  },
   "KBArticles": [
     {
       "linkText": "Load balancing for VMware Horizon View",

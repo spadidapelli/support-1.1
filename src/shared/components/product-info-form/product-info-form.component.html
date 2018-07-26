@@ -1,95 +1,85 @@
-<div class="row text-center support-request-form px-1">
-    <form clrForm class="text-left col-md-12" (submit)="onFormDataSubmit()">
-      <div class="row clr-row emc-container">
-        <div class="col-md-6">
+<form>
+  <section class="form-block support-request-form text-left">
+      <div class="form-group mt-1">
+          <label for="selects_0">Entitlement Account</label>
           <div class="select">
             <select id="selects_0" name="emcData" [(ngModel)]="productForm.emcData">
               <option *ngFor="let option of productInfo.emcData" [value]="option.value">{{option.name}}</option>
             </select>
-          </div>
-        </div>
-        <div class="col-md-6 text-right">
-          <a [href]="productInfo.contactLink">Update Contact Details</a>
         </div>
       </div>
-      <!-- emc-container ends here -->
-      <div class="row clr-row product-type mt-1">
-        <div class="col-md-12">
-          <div class="form-group">
-            <label>PRODUCT TYPE</label>
-            <div class="radio" *ngFor="let pType of productInfo.productType;let i = index">
-              <input type="radio" name="productType" id="pType{{i}}" [(ngModel)]="productForm.selectedProductType" [value]="pType.key" [checked]="i === 0">
-              <label for="pType{{i}}">{{pType.name}}</label>
-            </div>
-          </div>
+      <div class="form-group mt-1">
+        <label for="pType0">Product type</label>
+        <div class="radio" *ngFor="let pType of productInfo.productType;let i = index">
+          <input type="radio" name="productType" id="pType{{i}}" [(ngModel)]="productForm.selectedProductType" [value]="pType.key" [checked]="i === 0">
+          <label for="pType{{i}}">{{pType.name}}</label>
         </div>
       </div>
-      <!-- Product type input fields ends here -->
-      <div class="row clr-row product-options">
-        <div class="col-md-12 mt-1" *ngIf="productForm.selectedProductType === 'cloud'">
-          <div class="select">
-            <select id="selects_1" name="serviceName" [(ngModel)]="productForm.serviceName">
-              <option *ngFor="let option of productInfo.serviceData" [value]="option.value">{{option.name}}</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-md-12 mt-1" *ngIf="productForm.selectedProductType === 'cloud'">
-          <div class="select">
-            <select id="selects_2" name="serviceId" [(ngModel)]="productForm.serviceId">
-              <option *ngFor="let option of productInfo.serviceIdList" [value]="option.value">{{option.name}}</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-md-6 mt-1" *ngIf="productForm.selectedProductType === 'onPremise'">
-          <div class="select">
-            <select id="selects_3" name="typeOfSupport" [(ngModel)]="productForm.typeOfSupport">
-              <option *ngFor="let option of productInfo.typeOfSupport" [value]="option.value">{{option.name}}</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-md-6 mt-1" *ngIf="productForm.selectedProductType === 'onPremise'">
-          <div class="select">
-            <select id="selects_4" name="typeOfIssue" [(ngModel)]="productForm.typeOfIssue">
-              <option *ngFor="let option of productInfo.typeOfIssue" [value]="option.value">{{option.name}}</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-md-12 mt-1" *ngIf="productForm.selectedProductType === 'onPremise'">
-          <div class="select">
-            <select id="selects_5" name="toolOrSoftware" [(ngModel)]="productForm.toolOrSoftware">
-              <option *ngFor="let option of productInfo.toolOrSoftware" [value]="option.value">{{option.name}}</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-md-6 mt-1">
-          <div class="select">
-            <select id="selects_6" name="supportType" [(ngModel)]="productForm.supportType">
-              <option *ngFor="let option of productInfo.supportType" [value]="option.value">{{option.name}}</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-md-6 mt-1">
-          <div class="select">
-            <select id="selects_7" name="priority" [(ngModel)]="productForm.priority">
-              <option *ngFor="let option of productInfo.priority" [value]="option.value">{{option.name}}</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="clr-form-control">
-            <div class="clr-control-container">
-              <div class="clr-textarea-wrapper">
-                <textarea id="textarea-basic-error" placeholder="Enter value here" class="clr-textarea" name="desc" [(ngModel)]="productForm.desc"  #kbSearchField ></textarea>
-                <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
-              </div>
-              <span class="clr-subtext text-right">Minimum 4000 Characters</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12 text-center">
-          <input type="submit" class="btn btn-primary submit-btn px-1" value="submit" />
+      
+      <div class="form-group mt-1" *ngIf="productForm.selectedProductType === 'cloud'">
+        <label for="selects_1">Service Name</label>
+        <div class="select">
+          <select [ngClass]="{'placeholder-text': (productForm.serviceName === 'default' || productForm.serviceName === '')}" id="selects_1" name="serviceName" [(ngModel)]="productForm.serviceName">
+            <option *ngFor="let option of productInfo.serviceData" [value]="option.value">{{option.name}}</option>
+          </select>
         </div>
       </div>
-      <!-- Product options input fields ends here -->
-    </form>
-  </div>
+      <div class="form-group mt-1" *ngIf="productForm.selectedProductType === 'cloud'">
+        <label for="selects_2">Service Id</label>
+        <div class="select">
+          <select [ngClass]="{'placeholder-text': (productForm.serviceId === 'default' || productForm.serviceId === '')}"id="selects_2" name="serviceId" [(ngModel)]="productForm.serviceId">
+            <option *ngFor="let option of productInfo.serviceIdList" [value]="option.value">{{option.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group mt-1" *ngIf="productForm.selectedProductType === 'onPremise'">
+        <label for="selects_3">Category</label>
+        <div class="select">
+          <select [ngClass]="{'placeholder-text': (productForm.typeOfSupport === 'default' || productForm.typeOfSupport === '')}"id="selects_3" name="typeOfSupport" [(ngModel)]="productForm.typeOfSupport" (change)="onSupportTypeChange()">
+            <option *ngFor="let option of productInfo.typeOfSupport" [value]="option.value">{{option.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group mt-1" *ngIf="productForm.selectedProductType === 'onPremise'">
+        <label for="selects_4">Issue Type</label>
+        <div class="select">
+          <select [ngClass]="{'placeholder-text': (productForm.typeOfIssue === 'default' || productForm.typeOfIssue === '')}"id="selects_4" name="typeOfIssue" [(ngModel)]="productForm.typeOfIssue">
+            <option *ngFor="let option of productInfo.typeOfIssueList" [value]="option.value">{{option.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group mt-1" *ngIf="productForm.selectedProductType === 'onPremise'">
+        <label for="selects_5">Product</label>
+        <div class="select">
+          <select [ngClass]="{'placeholder-text': (productForm.toolOrSoftware === 'default' || productForm.toolOrSoftware === '')}"id="selects_5" name="toolOrSoftware" [(ngModel)]="productForm.toolOrSoftware">
+            <option *ngFor="let option of productInfo.toolOrSoftware" [value]="option.value">{{option.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group mt-1">
+        <label for="selects_6">Support Type</label>
+        <div class="select">
+          <select [ngClass]="{'placeholder-text': (productForm.supportType === 'default' || productForm.supportType === '')}"id="selects_6" name="supportType" [(ngModel)]="productForm.supportType">
+            <option *ngFor="let option of productInfo.supportType" [value]="option.value">{{option.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group mt-1">
+        <label for="selects_7">Severity</label>
+        <div class="select">
+          <select [ngClass]="{'placeholder-text': (productForm.priority === 'default' || productForm.priority === '')}"id="selects_7" name="priority" [(ngModel)]="productForm.priority">
+            <option *ngFor="let option of productInfo.priority" [value]="option.value">{{option.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group mt-1">
+          <label for="textarea-basic-error">Description</label>
+          <textarea id="textarea-basic-error" placeholder="Enter value here" class="clr-textarea" name="desc" [(ngModel)]="productForm.desc"  #kbSearchField ></textarea>
+          <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+      </div>
+      <div class="mt-1">
+        <button class="btn btn-primary mr-1" (click)="onSubmit()">Submit</button>
+        <button class="btn btn-info-outline" (click)="onCancel()">Cancel</button>
+      </div>
+  </section>
+</form>
