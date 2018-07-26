@@ -32,7 +32,7 @@
                         <label id="category-text">VMware Cloud on AWS</label>
                  </div>
                  <div class="form-group ser-form-group">
-                    <label>Issue description</label>
+                    <label>Issue Description</label>
                     <label class="ser-request-description" id="description-text">Issue in installing third party Components and  Software </label>
                  </div>
                  <div class="form-group ser-form-group">
@@ -117,7 +117,7 @@
                                     <a class="btn btn-link " (click)="toggleShowAttachments();">
                                         <clr-icon  shape="attachment">
                                                 </clr-icon>
-                                       Show Attachments
+                                       {{existingFilesList.length}} Attachments
                                     </a>
                             </div>
                              <div *ngIf="viewExistAttach &&  existingFilesList.length" class="ser-file-list">

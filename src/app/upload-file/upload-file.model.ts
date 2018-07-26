@@ -13,7 +13,7 @@ export interface AddFileEvent {
 export const MAX_CHAR_LENGTH : number = 4000;
 
 /**Constant for upload url */
-export const UPLOAD_URL : string  = "https://console-stg.cloud.vmware.com/csp/gateway/portal/api/cs/attachments";
+export const UPLOAD_URL : string  = "https://servicerequest/attachments/upload";
 
 
 
