@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, AfterViewInit, OnDestroy, DoCheck } from '@angular/core';
 
 import { DataApiService } from '../../services/data-api.service';
 import { takeUntil, switchMap } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { Subject, empty } from 'rxjs';
   templateUrl: './kbarticle-container.component.html',
   styleUrls: ['./kbarticle-container.component.scss']
 })
-export class KBArticleContainerComponent implements OnInit, AfterViewInit, OnDestroy {
+export class KBArticleContainerComponent implements OnInit, AfterViewInit, OnDestroy, DoCheck {
   @Input() wrapperClass = '';
   @Input() showSupportBtnList = false;
   @Input() desc = null;
@@ -40,7 +40,7 @@ export class KBArticleContainerComponent implements OnInit, AfterViewInit, OnDes
         }
       })).subscribe(
         (data) => {
-          this.kbList = (data['results'] && data['results'].length > 0) ? data['results'].slice(0, 5) : null;
+          this.kbList = (data['results'] && data['results'].length > 0) ? data['results'].slice(0, 5) : [];
           this.spinner = false;
         }
       );
@@ -61,7 +61,17 @@ export class KBArticleContainerComponent implements OnInit, AfterViewInit, OnDes
   }
 
   ngAfterViewInit() {
-    this.elementRef.nativeElement.classList = this.wrapperClass;
+    this.wrapperClass.split(' ').forEach( (className) => {
+      this.elementRef.nativeElement.classList.add(className);
+    });
+  }
+
+  ngDoCheck() {
+    if (this.kbList && this.kbList.length > 0) {
+      this.elementRef.nativeElement.classList.add('kbarticleContainer');
+    } else {
+      this.elementRef.nativeElement.classList.remove('kbarticleContainer');
+    }
   }
 
   ngOnDestroy() {

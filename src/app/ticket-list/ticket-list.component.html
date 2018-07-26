@@ -3,8 +3,9 @@
           <clr-tab>
               <button clrTabLink id="allrequest">All</button>
               <clr-tab-content id="allrequestcontent" *clrIfActive>
-                  <clr-datagrid>
+                  <clr-datagrid class="custom-datagrid">
                       <clr-dg-column>Support Request</clr-dg-column>
+                      <clr-dg-column>Description</clr-dg-column>
                       <clr-dg-column>Severity</clr-dg-column>
                       <clr-dg-column>Last Updated </clr-dg-column>
                       <clr-dg-column>Product</clr-dg-column>
@@ -17,6 +18,7 @@
                               <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
                               <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
                           </clr-dg-cell>
+                          <clr-dg-cell>{{item.description}}</clr-dg-cell>
                           <clr-dg-cell>{{item.severity}}</clr-dg-cell>
                           <clr-dg-cell>{{item.lastUpdateDate}}</clr-dg-cell>
                           <clr-dg-cell>{{item.issueCategory}}</clr-dg-cell>
@@ -28,8 +30,9 @@
           <clr-tab>
               <button clrTabLink id="openrequest">Open request({{supportReqList.openSupportRequest1.totalResults}})</button>
               <clr-tab-content id="openrequestcontent" *clrIfActive="true">
-                  <clr-datagrid>
+                  <clr-datagrid class="custom-datagrid">
                       <clr-dg-column>Support Request</clr-dg-column>
+                      <clr-dg-column>Description</clr-dg-column>
                       <clr-dg-column>Severity</clr-dg-column>
                       <clr-dg-column>Last Updated </clr-dg-column>
                       <clr-dg-column>Product</clr-dg-column>
@@ -42,6 +45,7 @@
                               <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
                               <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
                           </clr-dg-cell>
+                          <clr-dg-cell>{{item.description}}</clr-dg-cell>
                           <clr-dg-cell>{{item.severity}}</clr-dg-cell>
                           <clr-dg-cell>{{item.lastUpdateDate}}</clr-dg-cell>
                           <clr-dg-cell>{{item.issueCategory}}</clr-dg-cell>
@@ -53,8 +57,9 @@
           <clr-tab>
               <button clrTabLink id="closedrequest">Closed in past 21 days ({{supportReqList.closedSupportRequest1.totalResults}})</button>
               <clr-tab-content id="closedrequestcontent" *clrIfActive>
-                  <clr-datagrid>
+                  <clr-datagrid class="custom-datagrid">
                       <clr-dg-column>Support Request</clr-dg-column>
+                      <clr-dg-column>Description</clr-dg-column>
                       <clr-dg-column>Severity</clr-dg-column>
                       <clr-dg-column>Last Updated </clr-dg-column>
                       <clr-dg-column>Product</clr-dg-column>
@@ -67,6 +72,7 @@
                               <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
                               <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
                           </clr-dg-cell>
+                          <clr-dg-cell>{{item.description}}</clr-dg-cell>
                           <clr-dg-cell>{{item.severity}}</clr-dg-cell>
                           <clr-dg-cell>{{item.lastUpdateDate}}</clr-dg-cell>
                           <clr-dg-cell>{{item.issueCategory}}</clr-dg-cell>
