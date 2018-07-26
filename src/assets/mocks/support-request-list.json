@@ -10,7 +10,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       },
       {
         "supportRequestId": "17359320001",
@@ -22,7 +23,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "17359702601",
         "caseId": "17359702601",
@@ -33,7 +35,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "16993708705",
         "caseId": "16993708705",
@@ -44,7 +47,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "16920910403",
         "caseId": "16920910403",
@@ -55,7 +59,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "16920918603",
         "caseId": "16920918603",
@@ -66,7 +71,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "17365704499",
         "caseId": "17365704499",
@@ -77,7 +83,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }
     ],
     "totalResults": 7
@@ -93,7 +100,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       },
       {
         "supportRequestId": "17359320001",
@@ -105,7 +113,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "17359702601",
         "caseId": "17359702601",
@@ -116,7 +125,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "16993708705",
         "caseId": "16993708705",
@@ -127,7 +137,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "16920910403",
         "caseId": "16920910403",
@@ -138,7 +149,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "16920918603",
         "caseId": "16920918603",
@@ -149,7 +161,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "17365704499",
         "caseId": "17365704499",
@@ -160,7 +173,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       },
       {
         "supportRequestId": "18838760206",
@@ -172,7 +186,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       },
       {
         "supportRequestId": "18838760606",
@@ -184,7 +199,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }
     ],
     "totalResults": 7
@@ -200,7 +216,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       },
       {
         "supportRequestId": "18838760606",
@@ -212,7 +229,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "17359702601",
         "caseId": "17359702601",
@@ -223,7 +241,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "16993708705",
         "caseId": "16993708705",
@@ -234,7 +253,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "16920910403",
         "caseId": "16920910403",
@@ -245,7 +265,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "16920918603",
         "caseId": "16920918603",
@@ -256,7 +277,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }, {
         "supportRequestId": "17365704499",
         "caseId": "17365704499",
@@ -267,7 +289,8 @@
         "severity": "3 - Medium ",
         "lastUpdateDate": "2018-07-03",
         "issueCategory": "VMware vSphere ESXi 5.5",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }
     ],
     "totalResults": 7
@@ -283,7 +306,8 @@
         "severity": "4 - Low",
         "lastUpdateDate": "23/2/2017",
         "issueCategory": "VMware Cloud on AWS",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       },
       {
         "supportRequestId": "18765383703",
@@ -295,7 +319,8 @@
         "severity": "4 - Low",
         "lastUpdateDate": "23/2/2017",
         "issueCategory": "VMware Cloud on AWS",
-        "supportlevel": "Subscription Services"
+        "supportlevel": "Subscription Services",
+        "description": "This is a test case created for the purpose of smoke test. Case will be closed post completion of testing. No action needed"
       }
     ],
     "totalResults": 2
