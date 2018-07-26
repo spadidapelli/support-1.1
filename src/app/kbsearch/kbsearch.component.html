@@ -5,7 +5,7 @@
 </div>
 <div class="clr-row row text-center search mt-1">
   <div class="clr-col-sm-12 clr-col-md-12 col-md-12">
-    <input type="text" id="site-search" name="q" size="50" placeholder="Start by typing your issue, SR number or product…. "
+    <input type="text" id="site-search" name="q" [(ngModel)]="desc" size="50" placeholder="Start by typing your issue, SR number or product…. "
       aria-label="Start by typing your issue, SR number or product…. " #kbSearchField />
   </div>
 </div>
@@ -15,114 +15,7 @@
 </span>
 </div> -->
 
-<div class="row mt-3" *ngIf="!showKbList">
-    <div class="col-md-12 col-lg-12">
-        <clr-tabs>
-            <clr-tab>
-                <button clrTabLink id="allrequest">All</button>
-                <clr-tab-content id="allrequestcontent" *clrIfActive>
-                    <clr-datagrid>
-                        <clr-dg-column>Support Request</clr-dg-column>
-                        <clr-dg-column>Severity</clr-dg-column>
-                        <clr-dg-column>Last Updated </clr-dg-column>
-                        <clr-dg-column>Product</clr-dg-column>
-                        <clr-dg-column>Support level</clr-dg-column>
-
-                        <clr-dg-row *ngFor="let item of allSupportRequest1.results">
-                            <clr-dg-cell>
-                                <a href="/supportrequestdetails">{{item.supportRequestId }} </a>
-                                <span class="badge badge-warning" *ngIf="item.status=='On hold'"> {{item.status}}</span>
-                                <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
-                                <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
-                            </clr-dg-cell>
-                            <clr-dg-cell>{{item.severity}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.lastUpdateDate}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.issueCategory}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.supportlevel}}</clr-dg-cell>
-                        </clr-dg-row>
-                    </clr-datagrid>
-                </clr-tab-content>
-            </clr-tab>
-            <clr-tab>
-                <button clrTabLink id="openrequest">Open request({{openSupportRequest1.totalResults}})</button>
-                <clr-tab-content id="openrequestcontent" *clrIfActive="true">
-                    <clr-datagrid>
-                        <clr-dg-column>Support Request</clr-dg-column>
-                        <clr-dg-column>Severity</clr-dg-column>
-                        <clr-dg-column>Last Updated </clr-dg-column>
-                        <clr-dg-column>Product</clr-dg-column>
-                        <clr-dg-column>Support level</clr-dg-column>
-
-                        <clr-dg-row *ngFor="let item of openSupportRequest1.results">
-                            <clr-dg-cell>
-                                <a href="/supportrequestdetails">{{item.supportRequestId }} </a>
-                                <span class="badge badge-warning" *ngIf="item.status=='On hold'"> {{item.status}}</span>
-                                <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
-                                <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
-                            </clr-dg-cell>
-                            <clr-dg-cell>{{item.severity}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.lastUpdateDate}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.issueCategory}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.supportlevel}}</clr-dg-cell>
-                        </clr-dg-row>
-                    </clr-datagrid>
-                </clr-tab-content>
-            </clr-tab>
-            <clr-tab>
-                <button clrTabLink id="closedrequest">Closed in past 21 days ({{closedSupportRequest1.totalResults}})</button>
-                <clr-tab-content id="closedrequestcontent" *clrIfActive>
-                    <clr-datagrid>
-                        <clr-dg-column>Support Request</clr-dg-column>
-                        <clr-dg-column>Severity</clr-dg-column>
-                        <clr-dg-column>Last Updated </clr-dg-column>
-                        <clr-dg-column>Product</clr-dg-column>
-                        <clr-dg-column>Support level</clr-dg-column>
-
-                        <clr-dg-row *ngFor="let item of closedSupportRequest1.results">
-                            <clr-dg-cell>
-                                <a href="/supportrequestdetails">{{item.supportRequestId }} </a>
-                                <span class="badge badge-warning" *ngIf="item.status=='On hold'"> {{item.status}}</span>
-                                <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
-                                <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
-                            </clr-dg-cell>
-                            <clr-dg-cell>{{item.severity}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.lastUpdateDate}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.issueCategory}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.supportlevel}}</clr-dg-cell>
-                        </clr-dg-row>
-                    </clr-datagrid>
-                </clr-tab-content>
-            </clr-tab>
-            <clr-tab>
-                <button clrTabLink id="watchlist">Watchlist({{supportWatchList1.totalResults}})</button>
-                <clr-tab-content id="watchlistcontent">
-                    <clr-datagrid>
-                        <clr-dg-column>Support Request</clr-dg-column>
-                        <clr-dg-column>Requester</clr-dg-column>
-                        <clr-dg-column>Severity</clr-dg-column>
-                        <clr-dg-column>Last Updated </clr-dg-column>
-                        <clr-dg-column>Product</clr-dg-column>
-                        <clr-dg-column>Support level</clr-dg-column>
-                        <clr-dg-row *ngFor="let item of supportWatchList1.results">
-                            <clr-dg-cell>
-                                <a href="/supportrequestdetails">{{item.supportRequestId }}</a>
-                                <span class="badge badge-warning" *ngIf="item.status=='On hold'"> {{item.status}}</span>
-                                <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
-                                <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
-                            </clr-dg-cell>
-                            <clr-dg-cell>{{item.requester}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.severity}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.lastUpdateDate}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.issueCategory}}</clr-dg-cell>
-                            <clr-dg-cell>{{item.supportlevel}}</clr-dg-cell>
-                        </clr-dg-row>
-                    </clr-datagrid>
-                </clr-tab-content>
-            </clr-tab>
-
-        </clr-tabs>
-    </div>
-</div>
+<app-ticket-list *ngIf="!showKbList"></app-ticket-list>
 
 
 
@@ -143,5 +36,5 @@
       </div>
     </div>
   </div> -->
-  <app-kbarticle-container [wrapperClass]="'col-md-8 mx-auto'" [showSupportBtnList]="true"></app-kbarticle-container>
+  <app-kbarticle-container [wrapperClass]="'col-md-8 mx-auto'" [showSupportBtnList]="true" [desc]="desc"></app-kbarticle-container>
 </div>

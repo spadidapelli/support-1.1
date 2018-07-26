@@ -17,6 +17,8 @@ import { SupportrequestdetailsComponent } from './supportrequestdetails/supportr
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { UploadFileService } from './upload-file/upload-file.service';
 import { FileTypeToIconService } from './upload-file/file-type-to-icon-service';
+import { TicketListComponent } from './ticket-list/ticket-list.component';
+import { SupportRequestConfirmComponent } from './support-request-confirm/support-request-confirm.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { FileTypeToIconService } from './upload-file/file-type-to-icon-service';
     KBArticleContainerComponent,
     ProductInfoFormComponent,
     SupportrequestdetailsComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    TicketListComponent,
+    SupportRequestConfirmComponent
   ],
   imports: [
     CommonModule,
