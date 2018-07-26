@@ -1,5 +1,18 @@
 <div class="row clr-row mt-2">
   <div class="col-md-12 text-center">
-    Your support request has been successfully created! Please click on the <a [routerLink]="['/supportrequestdetails']" href="#">Support Request</a> link to view details.
+    <div class="alert alert-success">
+      <div class="alert-items">
+        <div class="alert-item static">
+          <div class="alert-icon-wrapper">
+            <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+          </div>
+          <span class="alert-text">Your support request has been successfully submitted!</span>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+<div>
+  <h3>Next Step: Upload log files</h3>
+  <p>An email will be sent to your email address with support request details. Please <a [routerLink]="['/supportrequestdetails']">click here</a>  to view support request details and upload log files if any. </p>
 </div>
