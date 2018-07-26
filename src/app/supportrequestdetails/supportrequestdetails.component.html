@@ -1,0 +1,246 @@
+<div class="support-request-details-cont">
+        <!--Navigating back link -->
+        <a [routerLink]="['../']" class="btn btn-link back-link">
+           <clr-icon shape="caret left"></clr-icon>
+           Back to support requests
+        </a>
+        <!--Support request header-->
+        <div class="row">
+           <div class="col-xs">
+              <h2 class="margin-top-0" id="subject-text">Support Request Detail </h2>
+           </div>
+        </div>
+        <!-- Support request details attributes -->
+        <form class ="form" [formGroup]="supportRequestDetailsForm" (ngSubmit)="onSubmit()">
+        <section class="form-block">
+           <div class="row">
+              <div class="col-lg-6 col-xs-12">
+                 <div class="form-group ser-form-group">
+                    <label>Product</label>
+                    <label>VMware vSphere Data Protection 6.x</label>
+                 </div>
+                 <div class="form-group ser-form-group">
+                    <label>Severity</label>
+                    <label>3 - Mediuml</label>
+                 </div>
+                 <div class="form-group ser-form-group">
+                    <label>Support level</label>
+                    <label>Basic Support Agreement</label>
+                 </div>
+                 <div class="form-group ser-form-group">
+                        <label> Issue Category</label>
+                        <label id="category-text">VMware Cloud on AWS</label>
+                 </div>
+                 <div class="form-group ser-form-group">
+                    <label>Issue description</label>
+                    <label class="ser-request-description" id="description-text">Issue in installing third party Components and  Software </label>
+                 </div>
+                 <div class="form-group ser-form-group">
+                    <label>Account number</label>
+                    <label>112756162-VMware</label>
+                 </div>
+                 <div class="form-group ser-form-group">
+                    <label>Support Request owner</label>
+                    <label>Queue - Email Spam</label>
+                 </div>
+              </div>
+              <div class="col-lg-6 col-xs-12">
+                 <div class="form-group ser-form-group">
+                    <label>Request Number</label>
+                    <label>8074820595 <span  class="badge badge-success"> In progress</span></label>
+                 </div>
+                 <div class="form-group ser-form-group">
+                    <label>Requestor name</label>
+                    <label id="status-text">
+                    ZIFT NEW webqatest03 ZIFT NEW qaweb
+                    </label>
+                 </div>
+                 <div class="form-group ser-form-group" >
+                    <label>Contact Email</label>
+                    <label id="status-text">webqatest03@vmware.com</label>
+                 </div>
+                 <div class="form-group ser-form-group">
+                    <label>Country</label>
+                    <label id="status-text">
+                    India
+                    </label>
+                 </div>
+                 <div class="form-group ser-form-group" >
+                    <label>Contact phone</label>
+                    <label id="contact-phone-text">9522531234</label>
+                 </div>
+                 <div class="form-group ser-form-group">
+                    <label>Time zone</label>
+                    <label id="time-zone-text">(GMT+05:30) India Standard Time</label>
+                 </div>
+                 <div class="form-group ser-form-group">
+                    <label>Creation Date</label>
+                    <label>Apr 3, 2018, 6:04:05 PM</label>
+                 </div>
+                 <div class="form-group ser-form-group">
+                    <label>Estimated Response Time</label>
+                    <label>Apr 3, 2018, 6:34:05 PM</label>
+                 </div>
+              </div>
+           </div>
+           <!-- Support request notes section -->
+           <div class="row">
+              <div class="col-xs-12">
+                 <div class="form-group ser-form-group">
+                    <label>Notes</label>
+                    <div   class="card notes-card">
+                       <div class="row">
+                          <div  class="col-xs-12">
+                             <label   for="ser-notes" aria-haspopup="true" role="tooltip" style="height: 100%"
+                                class="tooltip tooltip-validation tooltip-sm ser-outside-tooltip ser-custom-tooltip notes-label"
+                                [class.invalid]="isControlInvalid('notes')">
+                             <textarea id="notes" 
+                             class="notesinputtext" [maxlength]="maxNotesLength"
+                             placeholder="Provide information that will help our support." 
+                             (keyup)="countRemainingChars($event)" 
+                             id="service-notes" rows="4" formControlName="notes" >
+                             </textarea>
+                             <span class="tooltip-content ser-tooltip-content" *ngIf="isControlInvalid('notes')">
+                                 Please enter Notes Value
+                             </span>
+                             <span *ngIf="notesRemainingChars<100 && notesRemainingChars>0" class="text-notificatio col-xs-12">{{notesRemainingChars}} characters remaining</span>
+                             <span *ngIf="notesRemainingChars===0" class="text-notification ser-info-color col-xs-12">
+                             Description reached maximum length ({{maxNotesLength}} characters)
+                             </span>
+                             </label>
+                          </div>
+                       </div>
+                       <div class="row notes-attach-wrapper" >
+                          <div  class="col-xs-8 notes-attach-layout">
+                             
+                             <div class="row" *ngIf="existingFilesList.length" >  
+                                    <a class="btn btn-link " (click)="toggleShowAttachments();">
+                                        <clr-icon  shape="attachment">
+                                                </clr-icon>
+                                       Show Attachments
+                                    </a>
+                            </div>
+                             <div *ngIf="viewExistAttach &&  existingFilesList.length" class="ser-file-list">
+                                    <ul class="list-unstyled">
+                                            <li *ngFor="let item of existingFilesList" class="">
+                                                    <clr-alert
+                                                    class="ser-upload-container"
+                                                    id="item.metaData.fileId"
+                                                    (clrAlertClosedChange)="removeExistFileById(item.metaData.id)"
+                                                    [clrAlertClosable]="item.metaData.uploadProgress === 100"
+                                                    [clrAlertType]="'info'"
+                                                    [clrAlertIcon]="getFileIcon(item)"
+                                                    [clrAlertSizeSmall]="true">
+                                                    <div class="alert-item ser-align-items">
+                                                       <span class="alert-text">
+                                                       {{item.file.name}}
+                                                       </span>
+                                                       <i *ngIf="item.metaData.uploadProgress < 100" class="spinner spinner-inline"></i>
+                                                    </div>
+                                                    </clr-alert>
+                                                 </li>
+                                    </ul>
+                            </div>
+                            <upload-file
+                             [uploadDisabled]="uploadInProgress"
+                             (addFile)="handleFileListChange($event)">
+                             </upload-file>
+                             
+                             <div *ngIf="filesList.length || fileErrorsList.length" class="ser-file-list">
+                                <ul class="list-unstyled">
+                                  <!---Error Files will be shown in the below list-->                                        
+                                   <li *ngFor="let err of fileErrorsList" class="">
+                                      <clr-alert
+                                      class="ser-upload-container"
+                                      id="item.errorId"
+                                      (clrAlertClosedChange)="removeFileError(err.errorId)"
+                                      [clrAlertClosable]="true"
+                                      [clrAlertType]="'danger'"
+                                      [clrAlertIcon]="exclamation-circle"
+                                      [clrAlertSizeSmall]="true">
+                                      <div class="alert-item ser-align-items">
+                                         <span class="alert-text">
+                                         {{err.msg}}
+                                         </span>
+                                      </div>
+                                      </clr-alert>
+                                   </li>
+                                   <!---Success Files will be shown in the below list-->
+                                   <li *ngFor="let item of filesList" class="">
+                                      <clr-alert
+                                      class="ser-upload-container"
+                                      id="item.metaData.fileId"
+                                      (clrAlertClosedChange)="removeFileById(item.metaData.id)"
+                                      [clrAlertClosable]="item.metaData.uploadProgress === 100"
+                                      [clrAlertType]="'info'"
+                                      [clrAlertIcon]="getFileIcon(item)"
+                                      [clrAlertSizeSmall]="true">
+                                      <div class="alert-item ser-align-items">
+                                         <span class="alert-text">
+                                         {{item.file.name}}
+                                         </span>
+                                         <i *ngIf="item.metaData.uploadProgress < 100" class="spinner spinner-inline"></i>
+                                      </div>
+                                      </clr-alert>
+                                   </li>
+                                </ul>
+                             </div>
+                          </div>
+                          <div class="col-xs-2 offset-xs-2 notes-btn-layout">
+                             <button class="btn btn-sm btn-primary ser-btn-post"  id="post-button">
+                                Post
+                             </button>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </section>
+        </form>
+        <h3>Recent Activity</h3>
+        <!--Activity Time line markup-->
+        <div class="row">
+           <div  class="col-xs-12 ser-activity-row">
+              <div class="row">
+                 <div class="col-xs-1 icon-col">
+                    <clr-icon shape="note" size="40" class="ser-activity-icon" ></clr-icon>
+                    <div class="ser-activity-hr"></div>
+                 </div>
+                 <div class="col-xs">
+                    <h5 class="margin-top-8">2018-07-24 18:56:51</h5>
+                    <div id="userInputComment" class="card ser-activity-card">
+                       <div #requestPost  placeholder="Tell us more about this problem..."
+                          class="card-block" id="sr-add-comment">
+                          <div  class="card-text">
+                             <label class="ser-multiline-label">
+                             Added By:webqatest03 qaweb
+                             </label>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div  class="col-xs-12 ser-activity-row">
+              <div class="row">
+                 <div class="col-xs-1 icon-col">
+                    <clr-icon shape="note" size="40" class="ser-activity-icon" ></clr-icon>
+                    <div class="ser-activity-hr"></div>
+                 </div>
+                 <div class="col-xs">
+                    <h5 class="margin-top-8">2018-07-24 18:56:51</h5>
+                    <div id="userInputComment" class="card ser-activity-card">
+                       <div #requestPost  placeholder="Tell us more about this problem..."
+                          class="card-block " id="sr-add-comment">
+                          <div  class="card-text">
+                             <label class="ser-multiline-label">
+                             Added By:webqatest03 qaweb
+                             </label>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>

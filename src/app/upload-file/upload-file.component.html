@@ -1,0 +1,14 @@
+
+<!--Attachment Upload Mark Up -->
+<div class="ser-upload-file-layout">
+    <label class="btn btn-link padding-left-0 padding-right-0"
+           [class.ser-disabled-label]="uploadDisabled">
+        <input type="file"
+               class="ser-input-file"
+               (change)="updateSelectedFiles($event)"
+               placeholder="Upload file"
+               accept="*"
+               [disabled]="uploadDisabled">
+        Attach Files
+    </label>
+</div>

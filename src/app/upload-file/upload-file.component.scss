@@ -1,0 +1,24 @@
+
+//Upload file css
+input[type='file'] {
+  display: none;
+}
+
+.ser-input-file {
+  display: none;
+}
+
+.ser-upload-file-layout {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+.ser-hint-color-gray {
+  color:silver;
+}
+
+.ser-disabled-label {
+  cursor: no-drop;
+  color: gray;
+}

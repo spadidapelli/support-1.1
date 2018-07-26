@@ -10,9 +10,13 @@ import { KbsearchComponent } from './kbsearch/kbsearch.component';
 import { CreatesupportrequestComponent } from './createsupportrequest/createsupportrequest.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { KBArticleContainerComponent } from '../shared/components/kbarticle-container/kbarticle-container.component';
 import { ProductInfoFormComponent } from '../shared/components/product-info-form/product-info-form.component';
+import { SupportrequestdetailsComponent } from './supportrequestdetails/supportrequestdetails.component';
+import { UploadFileComponent } from './upload-file/upload-file.component';
+import { UploadFileService } from './upload-file/upload-file.service';
+import { FileTypeToIconService } from './upload-file/file-type-to-icon-service';
 import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { SupportRequestConfirmComponent } from './support-request-confirm/support-request-confirm.component';
 
@@ -24,6 +28,8 @@ import { SupportRequestConfirmComponent } from './support-request-confirm/suppor
     HeaderComponent,
     KBArticleContainerComponent,
     ProductInfoFormComponent,
+    SupportrequestdetailsComponent,
+    UploadFileComponent,
     TicketListComponent,
     SupportRequestConfirmComponent
   ],
@@ -35,9 +41,10 @@ import { SupportRequestConfirmComponent } from './support-request-confirm/suppor
     ROUTING,
     HttpClientModule,
     ClrFormsNextModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UploadFileService,FileTypeToIconService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
