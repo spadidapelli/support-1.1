@@ -1,7 +1,13 @@
+.spinner-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 .support-request-form {
     .form-group {
-        padding-left: 6rem;
-
+        @media (min-width: 768px) {
+            padding-left: 6rem;
+        }
         .label:first-child {
             width: 5.5rem;
         }
@@ -13,10 +19,21 @@
             }
         }
         .radio:nth-child(2) {
-            flex: 0 1 28%;
+            @media (min-width: 769px) {
+                flex: 0 1 28%;
+            }
+            @media (min-width: 768px) and (max-width: 1024px) {
+                flex: 0 1 100%;
+            }
+            @media (max-width: 767px) {
+                flex: 0 1 35%;
+            }
         }
         .radio:nth-child(3) {
             flex: 0 1 40%;
+            @media (min-width: 768px) and (max-width: 1024px) {
+                flex: 0 1 100%;
+            }
         }
 
         textarea {

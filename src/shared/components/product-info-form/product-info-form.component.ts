@@ -14,6 +14,7 @@ export class ProductInfoFormComponent implements OnInit, OnDestroy {
   @Input() productInfo: any = {};
   @ViewChild('kbSearchField') kbSearchField: ElementRef;
   selectedEmcName = 'Select EMC details';
+  @Input() spinner = false;
   productForm = {
     emcData: 'default',
     serviceName: 'default',

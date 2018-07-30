@@ -1,10 +1,5 @@
-<div class="row mt-1" *ngIf="spinner">
-  <span class="spinner spinner-sm mx-auto">
-      Loading...
-  </span>
-  </div>
-  <h3 class="mt-2">Create Support Request</h3>
+<h3 class="mt-2">Create Support Request</h3>
 <div class="clr-row row text-center support-enquiry-container mt-0">
-  <app-product-info-form *ngIf="productData" [productInfo]="productData"></app-product-info-form>
+  <app-product-info-form *ngIf="productData" [spinner]="spinner" [productInfo]="productData"></app-product-info-form>
   <app-kbarticle-container [wrapperClass]="'col-md-6'" [showSupportBtnList]="false" ></app-kbarticle-container>
 </div>
