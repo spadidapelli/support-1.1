@@ -14,18 +14,18 @@
       </div>
     </div>
   </div> -->
-  <div class="row mt-1" *ngIf="spinner">
-    <span class="spinner spinner-sm mx-auto">
+  <div class="col-md-12 mx-auto spinner-container" *ngIf="spinner">
+    <span class="spinner spinner-sm">
         Loading...
     </span>
-    </div>
+  </div>
       <div class="col-md-12 mx-auto" *ngIf="kbList">
         <!-- <h4 id="link1">{{kbList.pipeline}}</h4> -->
         <div id="content1" class="mt-1">
           <div class="row mb-1" *ngFor="let item of kbList; let i = index">
             <div class="col-md-12 text-left">
               <div> <a href="{{item.PrintableUri}}" class="kbURL" innerHTML="{{item.title}}"></a> </div>
-              <div innerHTML="{{item.excerpt}}"></div>
+              <div class="desc" innerHTML="{{item.excerpt}}"></div>
             </div>
           </div>
           <div class="createSupportRequest mt-1" *ngIf="showSupportBtnList">
