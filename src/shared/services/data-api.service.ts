@@ -24,7 +24,7 @@ export class DataApiService {
 
 
   getKBProductInfo() {
-    return this.http.get('/assets/mocks/KB-product-info.json');
+    return this.http.get('assets/mocks/KB-product-info.json');
   }
 
   getKBArticleList(searchString: string) {
@@ -59,6 +59,6 @@ export class DataApiService {
   }
 
   getSupportReqList() {
-    return this.http.get('/assets/mocks/support-request-list.json');
+    return this.http.get('assets/mocks/support-request-list.json');
   }
 }

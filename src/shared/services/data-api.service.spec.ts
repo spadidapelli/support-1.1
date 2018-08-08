@@ -22,7 +22,7 @@ describe('DataApiService', () => {
         expect(res).toEqual({key: 'value'});
       });
       MockHttp.match({
-        url: '/assets/mocks/KB-product-info.json',
+        url: 'assets/mocks/KB-product-info.json',
         method: 'GET'
       })[0].flush({key: 'value'});
   }));
