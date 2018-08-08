@@ -13,7 +13,7 @@
 
                       <clr-dg-row *ngFor="let item of supportReqList.allSupportRequest1.results">
                           <clr-dg-cell>
-                              <a href="/supportrequestdetails">{{item.supportRequestId }} </a>
+                              <a [routerLink]="['/supportrequestdetails']">{{item.supportRequestId }} </a>
                               <span class="badge badge-warning" *ngIf="item.status=='On hold'"> {{item.status}}</span>
                               <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
                               <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
@@ -40,7 +40,7 @@
 
                       <clr-dg-row *ngFor="let item of supportReqList.openSupportRequest1.results">
                           <clr-dg-cell>
-                              <a href="/supportrequestdetails">{{item.supportRequestId }} </a>
+                              <a [routerLink]="['/supportrequestdetails']">{{item.supportRequestId }} </a>
                               <span class="badge badge-warning" *ngIf="item.status=='On hold'"> {{item.status}}</span>
                               <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
                               <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
@@ -67,7 +67,7 @@
 
                       <clr-dg-row *ngFor="let item of supportReqList.closedSupportRequest1.results">
                           <clr-dg-cell>
-                              <a href="/supportrequestdetails">{{item.supportRequestId }} </a>
+                              <a [routerLink]="['/supportrequestdetails']">{{item.supportRequestId }} </a>
                               <span class="badge badge-warning" *ngIf="item.status=='On hold'"> {{item.status}}</span>
                               <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
                               <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
@@ -93,7 +93,7 @@
                       <clr-dg-column>Support level</clr-dg-column>
                       <clr-dg-row *ngFor="let item of supportWatchList1.results">
                           <clr-dg-cell>
-                              <a href="/supportrequestdetails">{{item.supportRequestId }}</a>
+                              <a [routerLink]="['/supportrequestdetails']">{{item.supportRequestId }}</a>
                               <span class="badge badge-warning" *ngIf="item.status=='On hold'"> {{item.status}}</span>
                               <span class="badge badge-success" *ngIf="item.status=='In progress'"> {{item.status}}</span>
                               <span class="badge badge-blue" *ngIf="item.status=='Closed'"> {{item.status}}</span>
